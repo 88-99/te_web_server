@@ -7,4 +7,11 @@ server = WEBrick::HTTPServer.new({
   :Port => 8000
 })
 
+server.mount_proc("/time") do |req, res|
+  body = "<html><body>#{Time.now}</body></html>"
+  res.status = 200
+  res['Content-Type'] = 'text/html'
+  res.body = body
+end
+
 server.start
