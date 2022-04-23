@@ -39,7 +39,7 @@ server.mount_proc("/form_post") do |req, res|
               <meta charset='utf-8'>
             </head>
             <body>
-              クエリパラメータは#{h}です。<br>
+              フォームデータは#{h}です。<br>
               こんにちは#{h['user_name']}さん。あなたの年齢は#{h['age']}ですね。
             </body>
           </html>"
